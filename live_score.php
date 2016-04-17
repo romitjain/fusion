@@ -13,12 +13,3 @@ echo '</h1>';
 $u=$array[0]['de'];
 header('Refresh:10;URL=cric.php');
 ?>
-<h2>Last Match Winner</h2>
-<?php
-$rss = simplexml_load_file('http://static.cricinfo.com/rss/livescores.xml');
-foreach ($rss->channel->item as $item) { 
-   echo '<div class="line">';
-   echo "<p>" . $item->description . "</p>";
-   echo '</div>';
-} 
-?>
