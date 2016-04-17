@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+	require "cricinfo.php";
     function buildBaseString($baseURI, $method, $params) {
         $r = array();
         ksort($params);
@@ -55,15 +56,19 @@
     $twitter_data = json_decode($json);
 	//print it out
 	
-	//print_r ($twitter_data);
+	//print_r ($twitter_data[0]);
 
 	/*foreach ($twitter_data as $tweet) 
 	{
 		echo $tweet->text;
 		echo "<br/>";
+		echo "########";	
+		echo $tweet->text;
+		echo "@@@@@@@";
+		
 	}*/
 ?>
-<html>
+
 <html>
 <head><title>CRICINFO</title>
 <link rel="stylesheet" type="text/css" href="css/material.css">
@@ -74,44 +79,67 @@
 
 <body>
 
-	<div classs="container">
+<div classs="container">   <!-- Wraps the whole document -->
 		
 	<!-- HEADER LIVE SCORES  -->
 		<div class="container-fluid">
 			<div class="wrapper">
 				<div class="row center">
 					<div class="content">
-					<h1 class="header">LIVE SCORE</h1>
-						<?php
-							error_reporting(0);
-							$content=file_get_contents("http://cricscore-api.appspot.com/csa");
-							$array = json_decode($content,true);
-							$u=$array[0]['id'];
-							
-							$content=file_get_contents("http://cricscore-api.appspot.com/csa?id=$u");
-							$array = json_decode($content,true);
-							echo $array[0]['de'];
-							// $u=$array[0]['de'];
-							
-						?>
+						<h1 class="header">LIVE SCORE</h1>
+						<h5> <?php echo $livescore->score; ?></h5>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-	<!--BODY -->
-		<div class="container">
+	<!--	tweets and photos   -->
+			
+		<div class="container"> <!--    -->  
 			<div class="row background">
 				<!-- photos -->
-				<div class="col m7 photos">
+				<div class="col m7 s6 photos">
 						
 				</div>
 				<!-- TWEETS-->
-				<div class="col m5">
-					<?php	
-						echo $twitter_data[0]->text;
-					?>
+				<div class="col m5 s6">
+					<div class="cards">
+						
+						<marquee direction="up" scrollamount="3" height="300px"> 
+						<div id="1" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[0]->text;?></span>
+							</div>
+						</div>
+						<div id="2" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[1]->text;?></span>
+							</div>
+						</div>
+						<div id="2" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[2]->text;?></span>
+							</div>
+						</div>
+						<div id="2" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[3]->text;?></span>
+							</div>
+						</div>
+						<div id="2" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[4]->text;?></span>
+							</div>
+						</div>
+						<div id="2" class="card-panel hoverable">
+							<div class="card-content">	
+								<span><?php	echo $twitter_data[5]->text;?></span>
+							</div>
+						</div>
+						</marquee>	
+					</div>				
 				</div>
 			</div>
 		</div>
@@ -121,4 +149,4 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 </body>
 </html>	
-</html>
+
