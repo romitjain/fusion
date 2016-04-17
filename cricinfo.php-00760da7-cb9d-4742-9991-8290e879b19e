@@ -1,0 +1,6 @@
+<?php
+
+	$url = "http://cricapi.com/api/cricketScore?unique_id=946765";
+	echo $url;
+?>
+

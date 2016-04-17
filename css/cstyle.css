@@ -1,0 +1,39 @@
+body{
+	background-color:#eceff1;
+}
+
+
+
+div.wrapper{
+	background-color:#1e88e5 ;
+	border-radius: 5px;
+	padding:2px;
+}
+
+div.content{
+	background-color:#2196f3;
+}
+div.photos{
+	margin-top:10px;
+	padding-top:10px;
+	border-right:1px solid #eceff1;
+	height:65vh;
+}
+h1.header{
+	font-family: 'Fjalla One', sans-serif;
+	margin-bottom:-5px;
+}
+
+div.background{
+	background-color:#fff;
+	height:70vh;
+}
+
+div.card-panel{
+	padding-top:10px;
+}
+div.cards{
+	padding-top:30px;
+	border:10px solid #fff;
+	background-image: src("back.png");
+}
