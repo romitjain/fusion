@@ -33,7 +33,7 @@
 		$livescore = file_get_contents($liveurl);
 		//echo $livescore;
 		$livescore = json_decode($livescore);
-		echo $livescore->score;
-		echo '<br/>';
+		//echo $livescore->score;
+		//echo '<br/>';
 	}
 ?>
